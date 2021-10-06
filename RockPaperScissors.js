@@ -20,13 +20,15 @@ function computerPlay(){
 }
 
 function playerPlay(){
-    let playerPick = prompt("Pick: rock, paper or scissors").toLowerCase();
+    let playerPickInitial = prompt("PICK: rock, paper or scissors");
+    playerPick = playerPickInitial.toLowerCase();
     console.log(`player picks: ${playerPick}`);
     //Verifico que el usuario entre una opcion correcta.
-    // while ((playerPick !== 'rock') || (playerPick !== 'paper')){
-    // playerPick = prompt("ERROR. Enter a valid option: 'rock', 'paper', 'scissors'").toLowerCase();
-    // console.log(`player picks: ${playerPick}`);
-    // }
+    while ((playerPick !== 'rock') && (playerPick !== 'paper') && (playerPick !== 'scissors')){
+    playerPickInitial = prompt("ERROR. Enter a valid option: 'rock', 'paper' or 'scissors'");
+    playerPick = playerPickInitial.toLowerCase();
+    console.log(`player picks: ${playerPick}`);
+    }
     return playerPick;
 }
 
@@ -37,7 +39,7 @@ function playRound(playerSelection, computerSelecion){
     //Primero considero el empate.
     if (playerSelection === computerSelection){
         console.log("empate");
-        return 'empate';
+        return 'tie';
     }
     //Considero cuando gana el jugador
     if ((playerSelection === 'rock') && (computerSelection === 'scissors')){
@@ -88,11 +90,11 @@ function game(){
 
     //Una vez que se jugaron las 5 rondas CON RESULTADO, determino el ganador.
     if (winCounter >= 3){
-        console.log(`Ganaste ${winCounter}/5 rondas, GANASTE!`);
-        return `Ganaste ${winCounter}/5 rondas, GANASTE!`
+        console.log(`You winned ${winCounter}/5 rounds, YOU WINNED!`);
+        return `You winned ${winCounter}/5 rounds, YOU WINNED!`
     }
-    console.log(`Ganaste ${winCounter}/5 rondas, PERDISTE!`);
-    return `Ganaste ${winCounter}/5 rondas, PERDISTE`;
+    console.log(`You winned ${winCounter}/5 rounds, YOU LOSE.!`);
+    return `You winned ${winCounter}/5 rounds, YOU LOSE!`;
 }
 
 //Ejecuto la función que contiene a todas las demas.
