@@ -22,6 +22,11 @@ function computerPlay(){
 function playerPlay(){
     let playerPick = prompt("Pick: rock, paper or scissors").toLowerCase();
     console.log(`player picks: ${playerPick}`);
+    //Verifico que el usuario entre una opcion correcta.
+    // while ((playerPick !== 'rock') || (playerPick !== 'paper')){
+    // playerPick = prompt("ERROR. Enter a valid option: 'rock', 'paper', 'scissors'").toLowerCase();
+    // console.log(`player picks: ${playerPick}`);
+    // }
     return playerPick;
 }
 
