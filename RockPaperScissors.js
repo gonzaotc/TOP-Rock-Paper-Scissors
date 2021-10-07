@@ -47,34 +47,34 @@ function playRound(playerSelection, computerSelecion){
     }
     //Considero cuando gana el jugador
     if ((playerSelection === 'rock') && (computerSelection === 'scissors')){
-        console.log('You win, rock beat scissors');
-        alert(`LOKI: ${computerSelection}! ...ok.. rock beat scissors, you win this time..`);
+        console.log('You win, rock beats scissors');
+        alert(`LOKI: ${computerSelection}! ...ok, rock beats scissors, you win this time..`);
         return 'win';
     }
     if ((playerSelection === 'paper') && (computerSelection === 'rock')){
-        console.log('You win, paper beat rock');
-        alert(`LOKI: ${computerSelection}! ...ok.. paper beat rock, you win this time..`);
+        console.log('You win, paper beats rock');
+        alert(`LOKI: ${computerSelection}! ...ok, paper beats rock, you win this time..`);
         return 'win';
     }
     if ((playerSelection === 'scissors') && (computerSelection === 'paper')){
-        console.log('You win, scissors beat paper');
-        alert(`LOKI: ${computerSelection}! ...ok.. scissors beat paper, you win this time..`);
+        console.log('You win, scissors beats paper');
+        alert(`LOKI: ${computerSelection}! ...ok, scissors beats paper, you win this time..`);
         return 'win';
     }
     //Considero cuando gana la maquina
     if (computerSelection === 'rock'){
-        console.log('You lose, rock beat scissors');
-        alert(`LOKI: ${computerSelection}! HAHA!, rock beat scissor, you can do nothing against me.`);
+        console.log('You lose, rock beats scissors');
+        alert(`LOKI: ${computerSelection}! HAHA!, rock beats scissor, you can do nothing against me.`);
         return 'lose';
     }
     if (computerSelection === 'paper'){
-        console.log('You lose, paper beat rock');
-        alert(`LOKI: ${computerSelection}! HAHA!, paper beat rock, you can do nothing against me.`);
+        console.log('You lose, paper beats rock');
+        alert(`LOKI: ${computerSelection}! HAHA!, paper beats rock, you can do nothing against me.`);
         return 'lose';
     }
     if (computerSelection === 'scissors'){
-        console.log('You lose, scissors beat paper');
-        alert(`LOKI: ${computerSelection}! HAHA!, scissors beat paper, you can do nothing against me.`);
+        console.log('You lose, scissors beats paper');
+        alert(`LOKI: ${computerSelection}! HAHA!, scissors beats paper, you can do nothing against me.`);
         return 'lose';
     }
 }
