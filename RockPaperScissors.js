@@ -1,3 +1,6 @@
+let replayGame = false;
+do{
+
 function computerPlay(){
     // Genero número aleatorio entre 1.001 y 3.99 -> lo flooreo a 1->3
     let computerPick = Math.floor(Math.random()*3 + 1);
@@ -20,7 +23,7 @@ function computerPlay(){
 }
 
 function playerPlay(){
-    let playerPickInitial = prompt("PICK: rock, paper or scissors");
+    let playerPickInitial = prompt("LOKI: Ok, pick one: rock, paper or scissors");
     playerPick = playerPickInitial.toLowerCase();
     console.log(`player picks: ${playerPick}`);
     //Verifico que el usuario entre una opcion correcta.
@@ -38,33 +41,40 @@ function playRound(playerSelection, computerSelecion){
 
     //Primero considero el empate.
     if (playerSelection === computerSelection){
-        console.log("empate");
+        console.log("tie");
+        alert(`LOKI: ${computerSelection}! ...it's a tie..`);
         return 'tie';
     }
     //Considero cuando gana el jugador
     if ((playerSelection === 'rock') && (computerSelection === 'scissors')){
         console.log('You win, rock beat scissors');
+        alert(`LOKI: ${computerSelection}! ...ok.. you win this time..`);
         return 'win';
     }
     if ((playerSelection === 'paper') && (computerSelection === 'rock')){
         console.log('You win, paper beat rock');
+        alert(`LOKI: ${computerSelection}! ...ok.. you win this time..`);
         return 'win';
     }
     if ((playerSelection === 'scissors') && (computerSelection === 'paper')){
         console.log('You win, scissors beat paper');
+        alert(`LOKI: ${computerSelection}! ...ok.. you win this time..`);
         return 'win';
     }
     //Considero cuando gana la maquina
     if (computerSelection === 'rock'){
         console.log('You lose, rock beat scissors');
+        alert(`LOKI: ${computerSelection}! HAHA!, you can do nothing against me.`);
         return 'lose';
     }
     if (computerSelection === 'paper'){
         console.log('You lose, paper beat rock');
+        alert(`LOKI: ${computerSelection}! HAHA!, you can do nothing against me.`);
         return 'lose';
     }
     if (computerSelection === 'scissors'){
         console.log('You lose, scissors beat paper');
+        alert(`LOKI: ${computerSelection}! HAHA!, you can do nothing against me.`);
         return 'lose';
     }
 }
@@ -89,15 +99,33 @@ function game(){
     }
 
     //Una vez que se jugaron las 5 rondas CON RESULTADO, determino el ganador.
-    if (winCounter >= 3){
-        console.log(`You winned ${winCounter}/5 rounds, YOU WINNED!`);
-        return `You winned ${winCounter}/5 rounds, YOU WINNED!`
+    if (winCounter===5){
+        console.log('LOKI: OMG! How it can be???? I lost all rounds against you :(, you are amazing, mortal.');
+        return 'LOKI: OMG! How it can be???? I lost all rounds against you :(, you are amazing, mortal.';
     }
-    console.log(`You winned ${winCounter}/5 rounds, YOU LOSE.!`);
-    return `You winned ${winCounter}/5 rounds, YOU LOSE!`;
+    if (winCounter===0){
+        console.log(`LOKI: HAHAH. YOU LOST ALL ROUNDS!, go home kid!`);
+        return `LOKI: HAHAH. YOU LOST ALL ROUNDS!, go home kid!`;
+    }
+    if (winCounter >= 3){
+        console.log(`LOKI: You won ${winCounter}/5 rounds, well... you win`);
+        return `LOKI: You won ${winCounter}/5 rounds, well... you win`
+    }
+    console.log(`LOKI: You winned ${winCounter}/5 rounds, you lost against me. HAHAH!`);
+    return `LOKI: You won ${winCounter}/5 rounds, you lost against me. HAHAH! `;
 }
 
 //Ejecuto la función que contiene a todas las demas.
-game();
+let letsPlay = prompt("LOKI:   So.. you wanna play rock paper scissors? with me, the god of mischief?.");
+if (letsPlay !== 'no'){
+    alert("... good luck kid, you will need it.. lets go for the best of five.");
+    alert(game());
 
+    replayGame = prompt("LOKI: Do you wanna play again.. kid?. enter 'yes' to try again.");
+    if (replayGame === 'yes'){
+        replayGame = true;
+    }
+}
+
+}while (replayGame === true)
 
