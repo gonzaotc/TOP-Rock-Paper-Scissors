@@ -48,33 +48,33 @@ function playRound(playerSelection, computerSelecion){
     //Considero cuando gana el jugador
     if ((playerSelection === 'rock') && (computerSelection === 'scissors')){
         console.log('You win, rock beat scissors');
-        alert(`LOKI: ${computerSelection}! ...ok.. you win this time..`);
+        alert(`LOKI: ${computerSelection}! ...ok.. rock beat scissors, you win this time..`);
         return 'win';
     }
     if ((playerSelection === 'paper') && (computerSelection === 'rock')){
         console.log('You win, paper beat rock');
-        alert(`LOKI: ${computerSelection}! ...ok.. you win this time..`);
+        alert(`LOKI: ${computerSelection}! ...ok.. paper beat rock, you win this time..`);
         return 'win';
     }
     if ((playerSelection === 'scissors') && (computerSelection === 'paper')){
         console.log('You win, scissors beat paper');
-        alert(`LOKI: ${computerSelection}! ...ok.. you win this time..`);
+        alert(`LOKI: ${computerSelection}! ...ok.. scissors beat paper, you win this time..`);
         return 'win';
     }
     //Considero cuando gana la maquina
     if (computerSelection === 'rock'){
         console.log('You lose, rock beat scissors');
-        alert(`LOKI: ${computerSelection}! HAHA!, you can do nothing against me.`);
+        alert(`LOKI: ${computerSelection}! HAHA!, rock beat scissor, you can do nothing against me.`);
         return 'lose';
     }
     if (computerSelection === 'paper'){
         console.log('You lose, paper beat rock');
-        alert(`LOKI: ${computerSelection}! HAHA!, you can do nothing against me.`);
+        alert(`LOKI: ${computerSelection}! HAHA!, paper beat rock, you can do nothing against me.`);
         return 'lose';
     }
     if (computerSelection === 'scissors'){
         console.log('You lose, scissors beat paper');
-        alert(`LOKI: ${computerSelection}! HAHA!, you can do nothing against me.`);
+        alert(`LOKI: ${computerSelection}! HAHA!, scissors beat paper, you can do nothing against me.`);
         return 'lose';
     }
 }
